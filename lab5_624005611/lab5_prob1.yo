@@ -1,0 +1,23 @@
+  0x000: 30f002000000 | irmovl $2, %eax #int i = 
+  0x006: 30f101000000 | irmovl $1, %ecx #int j = 
+                      | 	
+  0x00c: 401404000000 | rmmovl %ecx, 4(%esp) # moves value of int j to 4(%esp)
+                      | 
+  0x012: 30f205000000 | irmovl $5, %edx # edx points to value 5 to be added to eax
+  0x018: 30f301000000 | irmovl $1, %ebx # edx points to value 1 to be added to ecx
+                      | 
+  0x01e: 6101         | subl %eax, %ecx #ecx - eax
+  0x020: 722b000000   | jl greater
+  0x025: 7033000000   | jmp else
+                      | 
+  0x02a: 00           | halt
+                      | 
+  0x02b:              | greater:
+  0x02b: 6020         | 	addl %edx, %eax
+  0x02d: 501404000000 | 	mrmovl 4(%esp), %ecx
+                      | 	
+                      | 
+  0x033:              | else:
+  0x033: 501404000000 |     mrmovl 4(%esp), %ecx
+  0x039: 30f000000000 | 	irmovl $0, %eax
+  0x03f: 6031         | 	addl %ebx, %ecx

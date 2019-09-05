@@ -1,0 +1,22 @@
+irmovl $2, %eax #int i = 
+irmovl $1, %ecx #int j = 
+	
+rmmovl %ecx, 4(%esp) # moves value of int j to 4(%esp)
+
+irmovl $5, %edx # edx points to value 5 to be added to eax
+irmovl $1, %ebx # edx points to value 1 to be added to ecx
+
+subl %eax, %ecx #ecx - eax
+jl greater
+jmp else
+
+greater:
+	addl %edx, %eax
+	mrmovl 4(%esp), %ecx
+	halt
+	
+
+else:
+    mrmovl 4(%esp), %ecx
+	irmovl $0, %eax
+	addl %ebx, %ecx

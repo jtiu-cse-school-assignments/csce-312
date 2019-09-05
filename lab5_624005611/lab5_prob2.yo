@@ -1,0 +1,30 @@
+  0x000: 30f001000000 | irmovl $1, %eax #declare value for j
+  0x006: 400404000000 | rmmovl %eax, 4(%esp) #store value of j
+  0x00c: 30f001000000 | irmovl $1, %eax #declare value for k
+  0x012: 400408000000 | rmmovl %eax, 8(%esp) #store value of k
+  0x018: 30f000000000 | irmovl $0, %eax #declare value for i
+  0x01e: 40040c000000 | rmmovl %eax, 12(%esp) #store value of i
+  0x024: 30f201000000 | irmovl $1, %edx #declare value of incrementer
+  0x02a: 30f304000000 | irmovl $4, %ebx #declare value of the limit for i
+                      | 
+  0x030: 7035000000   | jmp Loop
+                      | 
+  0x035:              | Loop:
+  0x035: 50040c000000 |     mrmovl 12(%esp), %eax #retrieve the value of i
+  0x03b: 6000         |     addl %eax, %eax #i*2
+  0x03d: 400404000000 |     rmmovl %eax, 4(%esp) #stores this to j
+                      |     
+  0x043: 6020         |     addl %edx, %eax #adds value of j and 1
+  0x045: 400408000000 |     rmmovl %eax, 8(%esp) #store the above result to k
+                      |     
+  0x04b: 50040c000000 |     mrmovl 12(%esp), %eax #retrieve value of i to be modified
+  0x051: 50740c000000 |     mrmovl 12(%esp), %edi #retrieve value of i
+  0x057: 6020         |     addl %edx, %eax #new value of i
+  0x059: 40040c000000 |     rmmovl %eax, 12(%esp) #store this for new value of i
+                      |     
+  0x05f: 6137         |     subl %ebx, %edi #subtracts current value of i
+                      |                     # and the limit
+  0x061: 7235000000   |     jl Loop
+                      |     
+  0x066: 500404000000 | mrmovl 4(%esp), %eax
+  0x06c: 501408000000 | mrmovl 8(%esp), %ecx

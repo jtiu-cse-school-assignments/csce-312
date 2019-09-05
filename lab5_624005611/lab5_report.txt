@@ -1,0 +1,264 @@
+******************************************************************************************
+Compiling Instructions
+******************************************************************************************
+
+cd /Desktop/sim/misc/
+make program_name.yo
+../misc/yis program_name.yo
+
+******************************************************************************************
+Lab 5 Problem 1
+*******************************1***********************************************************
+
+irmovl $2, %eax #int i = 
+irmovl $1, %ecx #int j = 
+	
+rmmovl %ecx, 4(%esp) # moves value of int j to 4(%esp)
+
+irmovl $5, %edx # edx points to value 5 to be added to eax
+irmovl $1, %ebx # edx points to value 1 to be added to ecx
+
+subl %eax, %ecx #ecx - eax
+jl greater
+jmp else
+
+halt
+
+greater:
+	addl %edx, %eax
+	mrmovl 4(%esp), %ecx
+	halt
+	
+
+else:
+    mrmovl 4(%esp), %ecx
+	irmovl $0, %eax
+	addl %ebx, %ecx
+		
+	
+******************************************************************************************
+Lab 5 Problem 2
+******************************************************************************************
+
+irmovl $1, %eax #declare value for j
+rmmovl %eax, 4(%esp) #store value of j
+irmovl $1, %eax #declare value for k
+rmmovl %eax, 8(%esp) #store value of k
+irmovl $0, %eax #declare value for i
+rmmovl %eax, 12(%esp) #store value of i
+irmovl $1, %edx #declare value of incrementer
+irmovl $4, %ebx #declare value of the limit for i
+
+jmp Loop
+
+Loop:
+    mrmovl 12(%esp), %eax #retrieve the value of i
+    addl %eax, %eax #i*2
+    rmmovl %eax, 4(%esp) #stores this to j
+    
+    addl %edx, %eax #adds value of j and 1
+    rmmovl %eax, 8(%esp) #store the above result to k
+    
+    mrmovl 12(%esp), %eax #retrieve value of i to be modified
+    mrmovl 12(%esp), %edi #retrieve value of i
+    addl %edx, %eax #new value of i
+    rmmovl %eax, 12(%esp) #store this for new value of i
+    
+    subl %ebx, %edi #subtracts current value of i
+                    # and the limit
+    jl Loop
+    
+mrmovl 4(%esp), %eax
+mrmovl 8(%esp), %ecx
+
+******************************************************************************************
+Lab 5 Problem 3
+******************************************************************************************
+
+//Program 1, file name “lab5_prob3_1.c”
+#include <stdio.h>
+int main(int argc, char *argv[])
+{
+printf("Hello, world\n");
+return 0; }
+
+#Assembly code for lab5_prob3_1
+	.section	__TEXT,__text,regular,pure_instructions
+	.macosx_version_min 10, 11
+	.globl	_main
+	.align	4, 0x90
+_main:                                  ## @main
+	.cfi_startproc
+## BB#0:
+	pushq	%rbp
+Ltmp0:
+	.cfi_def_cfa_offset 16
+Ltmp1:
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+Ltmp2:
+	.cfi_def_cfa_register %rbp
+	subq	$32, %rsp
+	leaq	L_.str(%rip), %rax
+	movl	$0, -4(%rbp)
+	movl	%edi, -8(%rbp)
+	movq	%rsi, -16(%rbp)
+	movq	%rax, %rdi
+	movb	$0, %al
+	callq	_printf
+	xorl	%ecx, %ecx
+	movl	%eax, -20(%rbp)         ## 4-byte Spill
+	movl	%ecx, %eax
+	addq	$32, %rsp
+	popq	%rbp
+	retq
+	.cfi_endproc
+
+	.section	__TEXT,__cstring,cstring_literals
+L_.str:                                 ## @.str
+	.asciz	"Hello, world\n"
+
+
+.subsections_via_symbols
+
+******************************************************************************************
+
+//Program 2, file name “lab5_prob3_2.c”
+#include <stdio.h>
+int main(int argc, char *argv[])
+{
+int i = 1;
+i++;
+printf("The value of i is %d\n", i); return 0;
+}
+
+#Assembly code for lab5_prob3_2
+	.section	__TEXT,__text,regular,pure_instructions
+	.macosx_version_min 10, 11
+	.globl	_main
+	.align	4, 0x90
+_main:                                  ## @main
+	.cfi_startproc
+## BB#0:
+	pushq	%rbp
+Ltmp0:
+	.cfi_def_cfa_offset 16
+Ltmp1:
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+Ltmp2:									
+	.cfi_def_cfa_register %rbp
+	subq	$32, %rsp
+	leaq	L_.str(%rip), %rax
+	movl	$0, -4(%rbp)
+	movl	%edi, -8(%rbp)
+	movq	%rsi, -16(%rbp)
+	movl	$1, -20(%rbp)
+	movl	-20(%rbp), %edi
+	addl	$1, %edi
+	movl	%edi, -20(%rbp)
+	movl	-20(%rbp), %esi
+	movq	%rax, %rdi
+	movb	$0, %al
+	callq	_printf
+	xorl	%esi, %esi
+	movl	%eax, -24(%rbp)         ## 4-byte Spill
+	movl	%esi, %eax
+	addq	$32, %rsp
+	popq	%rbp
+	retq
+	.cfi_endproc
+
+	.section	__TEXT,__cstring,cstring_literals
+L_.str:                                 ## @.str
+	.asciz	"The value of i is %d\n"
+
+
+.subsections_via_symbols
+
+******************************************************************************************
+Compare and analyze the structure of the two assembly codes:
+
+******************************************************************************************
+Lab 5 Problem 4
+******************************************************************************************
+
+Both programs were compiled with gcc, which generated the *.s files. Both codes materialized the same way within the computer — both examples only had one file to be compiled, which only produced one .s file each. With the separate .s files, they are each compiled to separate .o files, and after the linking process, two separate files are produced, namely lab5_prob3_1.exe and lab5_prob4_main.exe. The only difference between them are the actual segments within the assembly files. In lab5_prob4_main.s, there is an extra segment that defines the print_hello() function, namely _print_hello. lab5_prob3_1.s does not have this definition because there is only one function within the code which calls _printf directly rather than calling a separate function. 
+
+
+******************************************************************************************
+Lab 5 Problem 5
+******************************************************************************************
+
+Both programs were compiled with gcc, which generated the *.s files. The two examples materialized differently in the computer, because in problem 4 we
+see that it only has one file, for which contains two functions, main and print_hello(); however, in the example given in problem 5, there are two files given, 
+lab5_prob5_main.c and lab5_prob5_print.c — one containing the main driver, and the other 
+containing a print_hello() function that gets utilized in main that does the printing.
+This is even evident in the assembly code for lab5_prob5_main.s, because there is no function segment or definition for the print_hello() function when it is being called in the assembly code in lab5_prob5_main.s, which means that the definition is within a different file which needs to be linked together.
+When the code in problem 4 gets compiled, only one .o file gets produced and it only gets linked with the necessary libraries; however with the codes in problem 4, the linker 
+has to link the two .o files together along with the necessary libraries, and the compilation of two files produces one executable file.
+
+******************************************************************************************
+Lab 5 Problem 6
+******************************************************************************************
+
+_main:
+    irmovl $15, %eax #set i to 40 in eax
+    jmp _very_fast_function #call _very_fast_function:
+
+_very_fast_function:
+    rmmovl %eax, 4(%ebp) #store i to 4(%ebp) : the val of i to be multiplied
+    rmmovl %eax, 8(%ebp)
+    irmovl $1, %eax #set eax to 1
+    rmmovl %eax, 12(%ebp) #store eax to 70(%ebp) : the value to be sub with 8()
+    irmovl $63, %eax #set eax to 64
+    rmmovl %eax, 16(%ebp) #store eax to 8(%ebp) : multiplier
+    irmovl $1, %eax #set eax to 1
+    rmmovl %eax, 20(%ebp) #store eax to 12(%ebp) : to be added 1 to i*64
+    irmovl $1024, %eax #set eax to 1024
+    rmmovl %eax, 24(%ebp) #store eax to 16(%esp) : to be compared
+    irmovl $1, %eax #set eax to 1
+    rmmovl %eax, 28(%ebp) #store eax to 20(%esp) : incrementer
+    
+adder:
+    mrmovl 4(%ebp), %eax #retrieve 4(%ebp) to eax
+    mrmovl 8(%ebp), %edi
+    addl %eax, %edi #add eax to eax
+    rmmovl %edi, 4(%ebp) #store eax to 4(%ebp)
+    
+    mrmovl 12(%ebp), %eax #retrieve 8(%ebp) to eax
+    mrmovl 28(%ebp), %ecx #retrieve 24() to ecx
+    mrmovl 12(%ebp), %edx #retrieve 8() to edx
+    addl %ecx, %eax #add ecx eax
+    rmmovl %eax, 12(%ebp) #store eax to 8()
+    
+    mrmovl 16(%ebp), %esi #retrieve 12() to edx
+    subl %esi, %edx #subtract ecx edx
+    jl adder #jl adder
+    
+    
+    xorl %esi, %esi
+    xorl %edi, %edi
+    xorl %edx, %edx
+    
+    mrmovl 4(%ebp), %eax
+    mrmovl 20(%ebp), %ecx
+    addl %ecx, %eax
+    mrmovl 24(%ebp), %ecx
+    subl %eax, %ecx
+    jl itsGreater
+
+    mrmovl 20(%ebp), %eax
+    xorl %eax, %eax
+    xorl %ecx, %ecx
+    #rmmovl %ecx, 4(%ebp)
+    
+    halt
+    
+itsGreater:
+    mrmovl 8(%ebp), %eax
+    mrmovl 28(%ebp), %ecx
+    addl %ecx, %eax
+    rmmovl %eax, 4(%ebp)
+    xorl %ecx, %ecx
+    halt

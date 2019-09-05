@@ -1,0 +1,1036 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Lab 5 Report
+\end_layout
+
+\begin_layout Author
+Julian Tiu (624005611)
+\end_layout
+
+\begin_layout Subsection*
+Lab 5 Problem 1:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+ irmovl $2, %eax 
+\end_layout
+
+\begin_layout Standard
+rmmovl %ecx, 4(%esp) 
+\end_layout
+
+\begin_layout Standard
+irmovl $1, %ecx
+\end_layout
+
+\begin_layout Standard
+rmmovl %ecx, 4(%esp)
+\end_layout
+
+\begin_layout Standard
+irmovl $5, %edx 
+\end_layout
+
+\begin_layout Standard
+irmovl $1, %ebx
+\end_layout
+
+\begin_layout Standard
+subl %eax, %ecx
+\end_layout
+
+\begin_layout Standard
+jl greater
+\end_layout
+
+\begin_layout Standard
+halt
+\end_layout
+
+\begin_layout Standard
+greater: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+ addl %edx, %eax 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+ mrmovl 4(%esp), %ecx 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+ halt 
+\end_layout
+
+\begin_layout Standard
+else: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+ mrmovl 4(%esp), %ecx 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+ irmovl $0, %eax 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+ addl %ebx, %ecx
+\end_layout
+
+\begin_layout Itemize
+The initial value for i is 2, and the final value is 7.
+\end_layout
+
+\begin_layout Itemize
+The initial value for j is 1, and the final value is 1.
+\end_layout
+
+\begin_layout Subsection*
+Lab 5 Problem 2:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+ irmovl $1, %eax #declare value for j 
+\end_layout
+
+\begin_layout Standard
+rmmovl %eax, 4(%esp) #store value of j 
+\end_layout
+
+\begin_layout Standard
+irmovl $1, %eax #declare value for k 
+\end_layout
+
+\begin_layout Standard
+rmmovl %eax, 8(%esp) #store value of k
+\end_layout
+
+\begin_layout Standard
+irmovl $0, %eax #declare value for i 
+\end_layout
+
+\begin_layout Standard
+rmmovl %eax, 12(%esp) #store value of i 
+\end_layout
+
+\begin_layout Standard
+irmovl $1, %edx #declare value of incrementer 
+\end_layout
+
+\begin_layout Standard
+irmovl $4, %ebx #declare value of the limit for i
+\end_layout
+
+\begin_layout Standard
+jmp Loop
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+ Loop: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+ mrmovl 12(%esp), %eax #retrieve the value of i 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+ addl %eax, %eax #i*2 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+ rmmovl %eax, 4(%esp) #stores this to j 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+ addl %edx, %eax #adds value of j and 1 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+ rmmovl %eax, 8(%esp) #store the above result to k 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+ mrmovl 12(%esp), %eax #retrieve value of i to be modified 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+ mrmovl 12(%esp), %edi #retrieve value of i 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+ addl %edx, %eax #new value of i 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+ rmmovl %eax, 12(%esp) #store this for new value of i 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+ subl %ebx, %edi #subtracts current value of i # and the limit 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+ jl Loop 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+ mrmovl 4(%esp), %eax 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+ mrmovl 8(%esp), %ecx
+\end_layout
+
+\begin_layout Itemize
+The initial value for j is 1, and the final value is 8.
+\end_layout
+
+\begin_layout Itemize
+The initial value for k is 1, and the final value is 9.
+\end_layout
+
+\begin_layout Itemize
+The initial value of i is 0.
+\end_layout
+
+\begin_layout Subsection*
+Lab 5 Problem 3:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+ Printout for lab5_prob3_1.c:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+ Hello, world
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+ Explanation of the segments in the generated assembly code:
+\end_layout
+
+\begin_layout Itemize
+The generated assembly code varies with the different optimization flags
+ during the compilation command.
+ The assembly code shown here is the generated assembly code without any
+ optimization flags.
+ Since this code is not optimized, it will contain unneccesary assembly
+ statements.
+\end_layout
+
+\begin_layout Itemize
+In "_main:", the register %rbp is pointing to the frame.
+\end_layout
+
+\begin_layout Itemize
+In "Ltmp1:", the registers %rsp and %rbp point to the same location in the
+ stack.
+\end_layout
+
+\begin_layout Itemize
+In "Ltmp2:", the statements prior to "callq _printf" allocates the arguments
+ for main in the stack, which are not used in the program.
+ The program then calls _printf, which is not defined in the assembly file,
+ and prints out "Hello, world." Since the program ends with a return 0 statement,
+ this is done with the "xorl %ecx, %ecx" that sets %ecx to 0 and "retq"
+ for returning.
+\end_layout
+
+\begin_layout Itemize
+L_.str is where the string to be printed is contained.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+ Printout for lab5_prob3_2.c:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+ The value of i is 2
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+ Explanation of the segments in the generated assembly code:
+\end_layout
+
+\begin_layout Itemize
+The generated assembly code varies with the different optimization flags
+ during the compilation command.
+ The assembly code shown here is the generated assembly code without any
+ optimization flags.
+ Since this code is not optimized, it will contain unneccesary assembly
+ statements.
+\end_layout
+
+\begin_layout Itemize
+In "_main:", the register %rbp is pointing to the frame.
+\end_layout
+
+\begin_layout Itemize
+In "Ltmp1:", the registers %rsp and %rbp point to the same location in the
+ stack.
+\end_layout
+
+\begin_layout Itemize
+In "Ltmp2:", the statements prior to "movl $1, -20(%rbp)" allocates the
+ arguments for main in the stack, which are not used in the program.
+ The program then sets i to 1 with the statement "movl $1, -20(%rbp), which
+ will be pointed by the register %edi.
+ i then gets incremented by 1 with the statement "addl $1, %edi" This incremente
+d value is the one that will be printed when "_printf" is called; _ptintf
+ is also not defined in here.
+\end_layout
+
+\begin_layout Itemize
+L_.str is where the string to be printed is contained.
+\end_layout
+
+\begin_layout Subsection*
+Lab 5 Problem 4:
+\end_layout
+
+\begin_layout Standard
+Both programs were compiled with gcc, which generated the *.s files.
+ Both codes materialized the same way within the computer — both examples
+ only had one file to be compiled, which only produced one .s file each.
+ With the separate .s files, they are each compiled to separate .o files,
+ and after the linking process, two separate files are produced, namely
+ lab5_prob3_1.exe and lab5_prob4_main.exe.
+ The only difference between them are the actual segments within the assembly
+ files.
+ In lab5_prob4_main.s, there is an extra segment that defines the print_hello()
+ function, namely _print_hello.
+ lab5_prob3_1.s does not have this definition because there is only one function
+ within the code which calls _printf directly rather than calling a separate
+ function.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Lab 5 Problem 5:
+\end_layout
+
+\begin_layout Standard
+Both programs were compiled with gcc, which generated the *.s files.
+ The two examples materialized differently in the computer, because in problem
+ 4 we see that it only has one file, for which contains two functions, main
+ and print_hello(); however, in the example given in problem 5, there are
+ two files given, lab5_prob5_main.c and lab5_prob5_print.c — one containing
+ the main driver, and the other containing a print_hello() function that
+ gets utilized in main that does the printing.
+ This is even evident in the assembly code for lab5_prob5_main.s, because
+ there is no function segment or definition for the print_hello() function
+ when it is being called in the assembly code in lab5_prob5_main.s, which
+ means that the definition is within a different file which needs to be
+ linked together.
+ When the code in problem 4 gets compiled, only one .o file gets produced
+ and it only gets linked with the necessary libraries; while with the codes
+ in problem 4, the linker has to link the two .o files together along with
+ the necessary libraries, and the compilation of two files produces one
+ executable file.
+\end_layout
+
+\begin_layout Subsection*
+Lab 5 Problem 6:
+\end_layout
+
+\begin_layout Standard
+The answer to problem 6 is within the file, lab5_prob6.c
+\end_layout
+
+\end_body
+\end_document

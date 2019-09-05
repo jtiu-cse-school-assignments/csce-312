@@ -1,0 +1,31 @@
+irmovl $1, %eax #declare value for j
+rmmovl %eax, 4(%esp) #store value of j
+irmovl $1, %eax #declare value for k
+rmmovl %eax, 8(%esp) #store value of k
+irmovl $0, %eax #declare value for i
+rmmovl %eax, 12(%esp) #store value of i
+irmovl $1, %edx #declare value of incrementer
+irmovl $4, %ebx #declare value of the limit for i
+
+jmp Loop
+
+Loop:
+    mrmovl 12(%esp), %eax #retrieve the value of i
+    addl %eax, %eax #i*2
+    rmmovl %eax, 4(%esp) #stores this to j
+    
+    addl %edx, %eax #adds value of j and 1
+    rmmovl %eax, 8(%esp) #store the above result to k
+    
+    mrmovl 12(%esp), %eax #retrieve value of i to be modified
+    mrmovl 12(%esp), %edi #retrieve value of i
+    addl %edx, %eax #new value of i
+    rmmovl %eax, 12(%esp) #store this for new value of i
+    
+    subl %ebx, %edi #subtracts current value of i
+                    # and the limit
+    jl Loop
+    
+mrmovl 4(%esp), %eax
+mrmovl 8(%esp), %ecx
+	
