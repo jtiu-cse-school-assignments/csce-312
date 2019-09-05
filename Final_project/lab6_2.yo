@@ -1,0 +1,39 @@
+  0x000: 30f00c000000 | irmovl $12, %eax        # Matrix1a
+  0x006: 400404000000 | rmmovl %eax, 4(%esp)
+  0x00c: 30f008000000 | irmovl $8, %eax			# Matrix1b
+  0x012: 400408000000 | rmmovl %eax, 8(%esp)
+  0x018: 30f00b000000 | irmovl $11, %eax		# Matrix1c
+  0x01e: 40040c000000 | rmmovl %eax, 12(%esp)
+  0x024: 30f010000000 | irmovl $16, %eax		# Matrix1d
+  0x02a: 400410000000 | rmmovl %eax, 16(%esp)
+                      | 
+  0x030: 30f002000000 | irmovl $2, %eax			# Matrix2a
+  0x036: 400414000000 | rmmovl %eax, 20(%esp)	
+  0x03c: 30f007000000 | irmovl $7, %eax			# Matrix2b
+  0x042: 400418000000 | rmmovl %eax, 24(%esp)	
+  0x048: 30f009000000 | irmovl $9, %eax			# Matrix2c
+  0x04e: 40041c000000 | rmmovl %eax, 28(%esp)	
+  0x054: 30f004000000 | irmovl $4, %eax			# Matrix2d
+  0x05a: 400420000000 | rmmovl %eax, 32(%esp)	
+                      | 
+  0x060: 500404000000 | mrmovl 4(%esp), %eax	# Loads Matrix1a to register1
+  0x066: 501414000000 | mrmovl 20(%esp), %ecx	# Loads Matrix2a to register2
+  0x06c: 6001         | addl %eax, %ecx			# Add register 1 and 2 together
+  0x06e: 401424000000 | rmmovl %ecx, 36(%esp)	# Store this value to memory
+  0x074: 500408000000 | mrmovl 8(%esp), %eax	# Loads Matrix1b to register1
+  0x07a: 501418000000 | mrmovl 24(%esp), %ecx	# Loads Matrix2b to register2
+  0x080: 6001         | addl %eax, %ecx			# Add register 1 and 2 together
+  0x082: 401428000000 | rmmovl %ecx, 40(%esp)	# Store this value to memory
+  0x088: 50040c000000 | mrmovl 12(%esp), %eax	# Loads Matrix1c to register1
+  0x08e: 50141c000000 | mrmovl 28(%esp), %ecx	# Loads Matrix1c to register1
+  0x094: 6001         | addl %eax, %ecx			# Add register 1 and 2 together
+  0x096: 40142c000000 | rmmovl %ecx, 44(%esp)	# Store this value to memory
+  0x09c: 500410000000 | mrmovl 16(%esp), %eax	# Loads Matrix1d to register1
+  0x0a2: 501420000000 | mrmovl 32(%esp), %ecx	# Loads Matrix2d to register2
+  0x0a8: 6001         | addl %eax, %ecx			# Add register 1 and 2 together
+  0x0aa: 401430000000 | rmmovl %ecx, 48(%esp)	# Store this value to memory
+                      | 
+  0x0b0: 500424000000 | mrmovl 36(%esp), %eax	# Load Matrix3a
+  0x0b6: 501428000000 | mrmovl 40(%esp), %ecx	# Load Matrix3b
+  0x0bc: 50242c000000 | mrmovl 44(%esp), %edx	# Load Matrix3c
+  0x0c2: 503430000000 | mrmovl 48(%esp), %ebx	# Load Matrix3d

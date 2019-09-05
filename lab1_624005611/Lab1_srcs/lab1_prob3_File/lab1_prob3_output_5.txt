@@ -1,0 +1,12 @@
+*** ACTUATOR STATUS ***
+Bell = 0
+Door Locked = 0
+Brake = 0
+
+engine_running = 0
+driver_seat_belt_fastened = 0
+door_closed = 0 
+driver_on_seat = 0
+key_in_car = 1 
+brake_pedal = 0 
+car_moving = 0

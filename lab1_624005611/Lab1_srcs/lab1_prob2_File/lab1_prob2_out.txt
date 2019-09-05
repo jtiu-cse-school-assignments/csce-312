@@ -1,0 +1,7 @@
+unsigned int data type is 4 bytes or 32 bits long
+double data type is 8 bytes or 64 bits long
+long data type is 8 bytes or 64 bits long
+long long data type is 8 bytes or 64 bits long
+char data type is 1 bytes or 8 bits long
+float data type is 4 bytes or 32 bits long
+struct timeval data type is 8 bytes or 64 bits long

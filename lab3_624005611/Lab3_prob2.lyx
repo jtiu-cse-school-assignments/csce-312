@@ -1,0 +1,149 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Lab 3 Problem 2
+\end_layout
+
+\begin_layout Section*
+Activities to do-
+\end_layout
+
+\begin_layout Subsection*
+1.
+ What is the meaning of “SPST” and “NO” in the context of electro-mechanical
+ switches? 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+indent
+\end_layout
+
+\end_inset
+
+ SPST - Single-Pole-Single-Throw; There is one pole that connects to one
+ throw when the toggle is activated.
+ 
+\end_layout
+
+\begin_layout Standard
+NO - Normally Open; The normal state of the toggle is normally open.
+ When the button is pushed, that's when current goes through the connected
+ circuit.
+ 
+\end_layout
+
+\begin_layout Subsection*
+2.
+ Design a small digital circuit (with Logisim) using basic logic gates,
+ so that when this circuit is used with the chosen switch, it will make
+ the circuit function as a toggle switch.
+ Use the button component in Logisim for this question.
+ (Input/Output > Button) The way the button switch operates in Logisim,
+ as long as you keep the button pressed an LED or other output signal will
+ stay ON.
+ When you release the button, the LED or output signal goes OFF.
+ Design a toggle switch such that when you press the button once, your LED
+ turns ON and then remains ON (even after the button is released) until
+ the button is pushed again.
+ 
+\end_layout
+
+\begin_layout Subsection*
+3.
+ Using the text-insert feature in Logisim mention in the circuit the chip
+ number(s) (from the 74XX family) that you would use for the circuit and
+ identify the pin numbers that would be used by your circuit.
+\end_layout
+
+\end_body
+\end_document

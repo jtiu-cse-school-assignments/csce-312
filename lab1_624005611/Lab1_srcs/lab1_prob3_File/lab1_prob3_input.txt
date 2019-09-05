@@ -1,0 +1,33 @@
+1 0 0 0 0 0 0 Expected Output: 1 1 0 
+1 1 0 0 0 0 0 Expected Output: 1 1 0
+1 0 1 0 0 0 0 Expected Output: 1 1 0
+1 1 1 0 0 0 0 Expected Output: 0 1 0
+0 0 0 0 1 0 0 Expected Output: 0 0 0 
+0 0 0 0 0 1 1 Expected Output: 0 1 1
+
+/*
+ ************************************************ MUST READ *****************************************************
+ *
+ * In the framework, since the while loop occurs in main, the "read_inputs_from_ip_if()" functions gets triggered
+ * n times. Within the "read_inputs_from_ip_if()" function, the program only reads one line at a time. If the while
+ * loop was inside the "read_inputs_from_ip_if()" function, then the read command would loop through the input file
+ * line per line -- this is not the case. If this was the case, the output would still only generate an output file
+ * with only one case at a time. Therefore...
+ *
+ * Instructions to read input file:
+ *	- Each cases must be read each time the program is ran
+ *	- For example
+ *		- The first case is 1 0 0 0 0 0 0 with an expected output of 1 0 0 and is in line 1 of the file
+ *		- To run the second case (1 1 0 0 0 0 0), exit the program and edit this input file so that
+ *		  the second case would now be in line 1 of this file instead of line 2.
+ *		- To run the third case (1 0 1 0 0 0 0), exit the program and edit this input file so that
+ *		  the third case would now be in line 1 of this file instead of line 3.
+ *		- So on and so forth...
+ *	- There are 6 test cases, therefore the program needs to be ran 6 times.
+ *	- The output file should generate different results each run, so the output file needs to be checked each
+ *	  time the program is ran
+ *	  
+ * Extra notes:
+ * The input order is in:
+ *	- engine_running, driver_seat_belt_fastened, doors_closed, driver_on_seat, key_in_car, brake_pedal, car_moving
+*/

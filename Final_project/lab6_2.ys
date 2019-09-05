@@ -1,0 +1,39 @@
+irmovl $12, %eax        # Matrix1a value
+rmmovl %eax, 4(%esp)
+irmovl $8, %eax			# Matrix1b value
+rmmovl %eax, 8(%esp)
+irmovl $11, %eax		# Matrix1c value
+rmmovl %eax, 12(%esp)
+irmovl $16, %eax		# Matrix1d value
+rmmovl %eax, 16(%esp)
+
+irmovl $2, %eax			# Matrix2a value
+rmmovl %eax, 20(%esp)	
+irmovl $7, %eax			# Matrix2b value
+rmmovl %eax, 24(%esp)	
+irmovl $9, %eax			# Matrix2c value
+rmmovl %eax, 28(%esp)	
+irmovl $4, %eax			# Matrix2d value
+rmmovl %eax, 32(%esp)	
+
+mrmovl 4(%esp), %eax	# Loads Matrix1a to register1
+mrmovl 20(%esp), %ecx	# Loads Matrix2a to register2
+addl %eax, %ecx			# Add register 1 and 2 together
+rmmovl %ecx, 36(%esp)	# Store this value to memory
+mrmovl 8(%esp), %eax	# Loads Matrix1b to register1
+mrmovl 24(%esp), %ecx	# Loads Matrix2b to register2
+addl %eax, %ecx			# Add register 1 and 2 together
+rmmovl %ecx, 40(%esp)	# Store this value to memory
+mrmovl 12(%esp), %eax	# Loads Matrix1c to register1
+mrmovl 28(%esp), %ecx	# Loads Matrix1c to register1
+addl %eax, %ecx			# Add register 1 and 2 together
+rmmovl %ecx, 44(%esp)	# Store this value to memory
+mrmovl 16(%esp), %eax	# Loads Matrix1d to register1
+mrmovl 32(%esp), %ecx	# Loads Matrix2d to register2
+addl %eax, %ecx			# Add register 1 and 2 together
+rmmovl %ecx, 48(%esp)	# Store this value to memory
+
+mrmovl 36(%esp), %eax	# Load Matrix3a value
+mrmovl 40(%esp), %ecx	# Load Matrix3b value
+mrmovl 44(%esp), %edx	# Load Matrix3c value
+mrmovl 48(%esp), %ebx	# Load Matrix3d value

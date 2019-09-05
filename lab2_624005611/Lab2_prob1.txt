@@ -1,0 +1,34 @@
+****************************************************************************** Lab2_prob1
+
+2) What are the names of the 74xx series logic gates that you should use to do the above
+problem in real-life situation?
+
+	74LS08 for the 2-input AND Gate
+	74LS32 for the 2-input OR Gate
+	74LS04 for the inverter Gate
+	
+
+3) Calculate the delay performance (time delay between change of any input which leads to
+change of the output) of the two circuits designed above. Assume that you have used
+74Fxx or 74LSxx series gates to implement the circuit. Use respective data sheets for the
+required chips. 
+
+	Data is acquired from http://rabbit.eng.miami.edu/info/datasheets/74LS08.pdf
+	Delay performance for 74LS08 at 15 pF low to high: 
+	Maximum time = 4 ns
+	Minimun time = 13 ns
+	
+	http://rabbit.eng.miami.edu/info/datasheets/74LS32.pdf
+	Delay performance for 74LS32 at 15 pF low to high: 
+	Maximum time = 3 ns
+	Minimum time = 11 ns
+	
+	http://rabbit.eng.miami.edu/info/datasheets/74LS04.pdf
+	Delay performance for 74LS04 at 15 pF low to high: 
+	Maximum time = 22 ns
+	TYP = 12 ns
+ 
+
+4) Which data sheet parameter(s) did you use to calculate the delay performance and why?
+
+	For all the chips, the data parameter used was the propagation delay time low to high level output at 15 pF at 25 degrees celcius, because temperature is the biggest factor determining such delay times.
